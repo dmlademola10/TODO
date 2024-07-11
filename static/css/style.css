@@ -1,0 +1,143 @@
+html,
+body {
+    margin: 0;
+    height: -webkit-fill-available;
+    color: whitesmoke;
+    font-family: 'Lucida Sans', 'Lucida Sans Regular', 'Lucida Grande', 'Lucida Sans Unicode', Geneva, Verdana, sans-serif;
+}
+
+.add,
+button[type=submit] {
+    display: inline;
+    float: right;
+    font-size: x-large;
+    background-color: green;
+    width: 30px;
+    height: 30px;
+    /* border-radius: 0.3rem; */
+    text-align: center;
+    cursor: pointer;
+    user-select: none;
+    border: 0;
+    padding: 0;
+    color: whitesmoke;
+}
+
+.add {
+    background-color: transparent;
+}
+
+.background {
+    display: flex;
+    background-color: rgb(24, 24, 24);
+    justify-content: center;
+    align-items: center;
+    height: -webkit-fill-available;
+}
+
+.container {
+    width: 100%;
+    height: -webkit-fill-available;
+    padding: 6px;
+    display: flex;
+    flex-direction: column;
+}
+
+.del {
+    color: red;
+    float: right;
+}
+
+.head {
+    user-select: none;
+    font-size: 30px;
+    padding: 4px 0 0 0;
+}
+
+#new {
+    height: 0;
+    overflow: hidden;
+    transition: 0.2s;
+    transition-timing-function: linear;
+}
+
+.input_group {
+    display: flex;
+    background-color: whitesmoke;
+    padding: 2px;
+    border-radius: 0.2rem;
+}
+
+.input_group input {
+    background-color: transparent;
+    color: black;
+    border: 0;
+    flex: 1;
+}
+
+.input_group input:focus {
+    outline: 0;
+}
+
+label.done {
+    text-decoration: line-through;
+    color: rgb(159, 159, 159);
+}
+
+#msg_box {
+    display: none;
+    position: absolute;
+    bottom: 5px;
+    left: 10px;
+    background-color: whitesmoke;
+    padding: 10px;
+    border-radius: 0.5rem;
+    font-size: large;
+    color: black;
+    cursor: pointer;
+}
+
+.task {
+    background-color: rgb(46, 46, 46);
+    padding: 10px;
+    cursor: pointer;
+    margin: 2px 0;
+    border-radius: 0.5rem;
+}
+
+.task:hover {
+    background-color: rgb(60, 60, 60);
+}
+
+.tasks {
+    flex: 1;
+    max-height: initial;
+    overflow: auto;
+}
+
+.tasks h1 {
+    text-align: center;
+}
+
+::-webkit-scrollbar {
+    width: 10px;
+}
+
+::-webkit-scrollbar-thumb {
+    border-radius: 0.3rem;
+    background-color: rgb(52, 52, 52);
+}
+
+::-webkit-scrollbar-thumb:hover {
+    background-color: rgb(94, 95, 95);
+}
+
+@media only screen and (min-width: 600px) {
+    .container {
+        height: 85%;
+        width: 80%;
+        border-radius: 0.5rem;
+        border: 1px solid whitesmoke;
+    }
+
+}

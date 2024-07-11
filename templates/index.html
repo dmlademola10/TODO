@@ -1,0 +1,45 @@
+{% load static %}
+<!DOCTYPE html>
+<html lang="en">
+
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <link rel="stylesheet" href="{% static 'css/style.css' %}" />
+        <link rel="stylesheet" href="{% static 'plugins/fontawesome-free-6.5.2-web/css/all.min.css' %}" />
+        <title>TODO | Mini-App</title>
+    </head>
+
+    <body>
+        <div class="background">
+            <div class="container">
+                <div class="top">
+                    <span class="head">Tasks</span>
+                    <div class="add" id="add" title="Add new task...">&plus;</div>
+                </div>
+                <div class="tasks">
+                    <form action="" enctype="multipart/form-data" method="post" id="new" name="new">
+                        <div class="input_group">
+                            {% csrf_token %}
+                            <input type="text" name="label" id="label" />
+                            <button type="submit" title="Save Task...">&checkmark;</button>
+                        </div>
+                    </form>
+                    {% for task in tasks %}
+                    <div class="task">
+                        <input type="checkbox" id="{{ task.id }}" class="check" onchange="check_func(this)" {% if task.done %} checked{% endif %}/>
+                        <label for="{{ task.id }}"{% if task.done %} class="done"{% endif %}>{{ task.label }}</label>
+                        <span onclick="delete_({{ task.id }})" class="fa fa-trash-can del" title="Delete"></span>
+                    </div>
+                    {% empty %}
+                    <h1>No tasks added.</h1>
+                    {% endfor %}
+                </div>
+            </div>
+            <div id="msg_box" title="Click to hide."></div>
+        </div>
+        <!-- <span class="copyright"></span> -->
+        <script src="{% static 'js/script.js' %}"></script>
+    </body>
+
+</html>
